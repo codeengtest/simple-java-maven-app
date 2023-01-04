@@ -18,8 +18,13 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                bat 'cd /jenkins/scripts/deliver.bat'
+                dir("./jenkins/scripts/deliver.bat"){
             }
+        }
+    }
+           stage('Completed') {
+            steps {
+             echo "Job Completed"
         }
     }
 }
